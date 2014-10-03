@@ -10,4 +10,4 @@ http.createServer( function(req,res) {
    res.write('Enjoy the Beach !\n');
    res.end();
 
-}).listen('8124');
+}).listen('80');
