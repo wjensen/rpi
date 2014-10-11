@@ -74,7 +74,7 @@ function serialListener(debug)
           //if (receivedData .indexOf('E') >= 0 && receivedData .indexOf('B') >= 0) {
            //sendData = receivedData .substring(receivedData .indexOf('B') + 1, receivedData .indexOf('E'));
            //receivedData = '';
-         }
+         
          // send the incoming data to browser with websockets.
        socketServer.emit('update', sendData);
       });  
