@@ -70,10 +70,10 @@ function serialListener(debug)
             // Listens to incoming data
         serialPort.on('data', function(data) {
              receivedData += data.toString();
-          if (receivedData .indexOf('E') >= 0 && receivedData .indexOf('B') >= 0) {
-           sendData = receivedData .substring(receivedData .indexOf('B') + 1, receivedData .indexOf('E'));
-           receivedData = '';
-         }
+          //if (receivedData .indexOf('E') >= 0 && receivedData .indexOf('B') >= 0) {
+           //sendData = receivedData .substring(receivedData .indexOf('B') + 1, receivedData .indexOf('E'));
+           //receivedData = '';
+         //}
          // send the incoming data to browser with websockets.
        socketServer.emit('update', sendData);
       });  
