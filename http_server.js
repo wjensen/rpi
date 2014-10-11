@@ -3,7 +3,7 @@ var fs = require('fs')
 socketio = require('socket.io'),
 url = require("url"), 
 SerialPort = require("serialport").SerialPort
-
+console.log('starting up')
 var socketServer;
 var serialPort;
 var portName = '/dev/ttyACM0'; //change this to your Arduino port
