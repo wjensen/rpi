@@ -1,7 +1,12 @@
 console.log('starting up')
 var http = require('http');
 var SerialPort = require('serialport').SerialPort;
-var serialport = new SerialPort('/dev/ttyACM0', { baudRate: 9600} )
+var serialport = new SerialPort('/dev/ttyACM0', { 
+		baudRate: 9600, 
+		dataBits: 8, 
+        parity: 'none', 
+        stopBits: 1, 
+        flowControl: false} )
 serialport.on('open', function(){
 		console.log('serial port opened');
 		serialport.on('data',function(data){
