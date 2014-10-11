@@ -1,3 +1,4 @@
+console.log('starting up')
 var http = require('http');
 var SerialPort = require('serialport').SerialPort;
 var serialport = new SerialPort('/dev/ttyACM0')
