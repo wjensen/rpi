@@ -1,7 +1,7 @@
 console.log('starting up')
 var http = require('http');
 var SerialPort = require('serialport').SerialPort;
-var serialport = new SerialPort('/dev/ttyACM0' { baudRate: 9600} )
+var serialport = new SerialPort('/dev/ttyACM0', { baudRate: 9600} )
 
 http.createServer( function(req,res) {
 	serialport.on('open', function(){
