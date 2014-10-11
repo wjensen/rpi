@@ -5,7 +5,7 @@ var serialport = new SerialPort('/dev/ttyACM0', { baudRate: 9600} )
 serialport.on('open', function(){
 		console.log('serial port opened');
 		serialport.on('data',function(data){
-			console.log('temperature:' + data[0])
+			console.log('temperature:' + data.toString());
 			
 		});
 	});
@@ -13,7 +13,7 @@ http.createServer( function(req,res) {
 	serialport.on('open', function(){
 		console.log('serial port opened');
 		serialport.on('data',function(data){
-			console.log(data[0])
+			console.log(data[0]);
 			var currentTime = new Date();
 			console.log('Client called at '+currentTime);
 
