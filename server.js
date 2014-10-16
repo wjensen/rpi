@@ -70,7 +70,7 @@ function serialListener(debug)
             // Listens to incoming data
         serialPort.on('data', function(data) {
              receivedData += data.toString();
-             console.log(receivedData)
+            
           //if (receivedData .indexOf('E') >= 0 && receivedData .indexOf('B') >= 0) {
            //sendData = receivedData .substring(receivedData .indexOf('B') + 1, receivedData .indexOf('E'));
            //receivedData = '';
