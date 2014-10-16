@@ -67,12 +67,12 @@
 	  content.font = '20pt Calibri';
 	  
 	  // make the wobbely values stop 
-	  if(pollOneH*2 > prevPotValue+2 || pollOneH*2 < prevPotValue-2){
+	  if(pollOneH> prevPotValue || pollOneH < prevPotValue){
 		prevPotValue = potValue;
-		potValue = pollOneH*2;
+		potValue = pollOneH;
 	  }
 
-	  content.fillText('Potmeter value: ' + potValue, text.x, text.y);
+	  content.fillText('Temperature: ' + potValue, text.x, text.y);
 
           // render graph 
 	  content.fillStyle = 'orange';
@@ -98,14 +98,14 @@
 	{
 		iosocket = io.connect();
 		iosocket.on('onconnection', function(value) {
-		pollOneH = value.pollOneValue/2; // recieve start poll value from server
+		pollOneH = value.pollOneValue; // recieve start poll value from server
 		initPoll();
 		initButton();
 		initSlider();
 				
 		// recieve changed values by other client from server
 		iosocket.on('updateData', function (recievedData) {
-			pollOneH = recievedData.pollOneValue/2; // recieve start poll value from server
+			pollOneH = recievedData.pollOneValue; // recieve start poll value from server
 		});
 	    });
 	}
@@ -122,7 +122,7 @@
 		x:poll1.w/2,
 		y:100
 	   }
-	   potValue = pollOneH*2;
+	   potValue = pollOneH;
 	   prevPotValue = potValue;
 	   animation(poll1,text);
 	}
