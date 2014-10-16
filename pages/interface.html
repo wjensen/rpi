@@ -83,12 +83,7 @@
 	  // request new frame
 	  requestAnimFrame(function() {
 	  
-	  if(poll1.h < pollOneH){
-		poll1.h += (pollOneH - poll1.h)*.15;
-	  }
-	  else if(poll1.h > pollOneH){
-		poll1.h -= (poll1.h - pollOneH)*.15;
-	  }
+	  
 	  text.y = (poll1.y - poll1.h) - 5;
 	  animation(poll1,text);
 	 });
